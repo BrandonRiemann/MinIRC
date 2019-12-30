@@ -18,17 +18,18 @@ int print_bot_strings( WindowContext *window ) {
                 wrap - indent,
                 indent,
                 1,
-                strlen( BOT_NAME ) + strlen( BOT_VERSION ) + 5,
-                "\n%s %s\n\n",
+                strlen( BOT_NAME ) + strlen( BOT_VERSION ) + strlen(BOT_AUTHOR) + 13,
+                "\n%s %s\t\t\t\t\t\t\t\t%s\n\n",
                 BOT_NAME,
-                BOT_VERSION );
+                BOT_VERSION,
+                BOT_AUTHOR );
 
-    rows += print_wrap( window,
+    /* rows += print_wrap( window,
                 wrap - indent,
                 indent,
                 1,
                 strlen( BOT_DESC ) + 3,
-                "%s\n\n",
+                "%s\t\t",
                 BOT_DESC );
 
     rows += print_wrap( window,
@@ -36,8 +37,8 @@ int print_bot_strings( WindowContext *window ) {
                 indent,
                 1,
                 strlen( BOT_AUTHOR ) + 19,
-                "%s\n\n",
-                BOT_AUTHOR );
+                "%s",
+                BOT_AUTHOR ); */
 
     return rows;
 }

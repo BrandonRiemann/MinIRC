@@ -236,7 +236,7 @@ int main( int argc, char **argv ) {
                            IRC_COLOR_NORMAL, COLOR_WHITE, COLOR_BLACK );
     /* Banner */
     window_set_color_pair( &window,
-                           IRC_COLOR_BANNER, COLOR_WHITE, COLOR_MAGENTA );
+                           IRC_COLOR_BANNER, COLOR_WHITE, COLOR_BLUE );
     /* Outgoing messages */
     window_set_color_pair( &window,
                            IRC_COLOR_OUTGOING, COLOR_GREEN, COLOR_BLACK );
