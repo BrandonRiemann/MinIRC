@@ -14,7 +14,7 @@ If development is continued, some possible features to be added would include:
 * Nick highlighting
 
 ## Compiling
-I use the following to compile the source code: gcc <.c files> -lncurses -o <output file>
+I use the following to compile the source code: gcc [.c files] -lncurses -o [output file]
  
 ## Usage
 For now, the program can be run with the following arguments: minirc [host] [port] [nick] [pass] [channel]
