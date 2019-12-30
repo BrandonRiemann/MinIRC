@@ -11,3 +11,10 @@ If development is continued, some possible features to be added would include:
 * Different colors for different users, primarily to distinguish between the messages
 * Different color schemes for the UI
 * Multiple "tabs" to allow several connected sessions simultaneously
+* Nick highlighting
+
+## Compiling
+I use the following to compile the source code: gcc <.c files> -lncurses -o <output file>
+ 
+## Usage
+For now, the program can be run with the following arguments: minirc [host] [port] [nick] [pass] [channel]
