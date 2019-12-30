@@ -11,3 +11,4 @@ If development is continued, some possible features to be added would include:
 * Different colors for different users, primarily to distinguish between the messages
 * Different color schemes for the UI
 * Multiple "tabs" to allow several connected sessions simultaneously
+* Nick highlighting
