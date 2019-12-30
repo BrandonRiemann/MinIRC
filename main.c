@@ -274,9 +274,16 @@ int main( int argc, char **argv ) {
     irc_hook_command( &irc, &privmsg_callback, "PRIVMSG" );
     irc_hook_command( &irc, &join_callback, "JOIN" );
 
-    irc_connect( &irc, &print_connect_str, TWITCH_IRC_HOST, TWITCH_IRC_PORT );
-    irc_auth( &irc, &print_auth_str, IRC_NICK, IRC_PASS );
-    irc_join( &irc, &print_join_str, IRC_CHANNEL );
+    if (argc == 6) {
+        irc_connect(&irc, &print_connect_str, argv[1], argv[2] );
+        irc_auth( &irc, &print_auth_str, argv[3], argv[4] );
+        irc_join( &irc, &print_join_str, argv[5] );
+    }
+    else {
+        irc_connect(&irc, &print_connect_str, TWITCH_IRC_HOST, TWITCH_IRC_PORT);
+        irc_auth( &irc, &print_auth_str, IRC_NICK, IRC_PASS );
+        irc_join( &irc, &print_join_str, IRC_CHANNEL );
+    }
 
     window_wait( &window, &input_callback );
 
