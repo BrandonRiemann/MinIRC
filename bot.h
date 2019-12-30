@@ -11,9 +11,9 @@
 #define TWITCH_IRC_HOST  "irc.chat.twitch.tv"
 #define TWITCH_IRC_PORT  "6667"
 
-#define IRC_NICK         "brandonriemann"
-#define IRC_PASS         "oauth:651q0zzssi9zl6kmk0iwwh9n6reyny"
-#define IRC_CHANNEL      "vinesauce"
+#define IRC_NICK         ""
+#define IRC_PASS         ""
+#define IRC_CHANNEL      ""
 
 int print_bot_strings( WindowContext* );
 
