@@ -1,7 +1,7 @@
 #define IRC_SHOWOUTPUT
 
 #include "irc-client.h"
-#include "bot.h"
+#include "ui.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -167,7 +167,7 @@ static void resize_callback( WindowContext *window ) {
     window_set_cursor( window, 0, 0 );
 
     window_set_color_on( window, IRC_COLOR_BANNER );
-    int rows = print_bot_strings( window );
+    int rows = print_ui_strings( window );
     window_set_color_off( window, IRC_COLOR_BANNER );
 
     window_move_cursor( window, 0, rows + 2 );
@@ -259,7 +259,7 @@ int main( int argc, char **argv ) {
     scrollok( window.window, 1 );
 
     window_set_color_on( &window, IRC_COLOR_BANNER );
-    int rows = print_bot_strings( &window );
+    int rows = print_ui_strings( &window );
     window_set_color_off( &window, IRC_COLOR_BANNER );
 
     wsetscrreg( window.window, rows + 2, window.rows - 3 );
