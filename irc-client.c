@@ -58,6 +58,8 @@ void irc_destroy_context( IrcContext *irc ) {
 static int irc_welcome_callback( IrcContext *irc, char **argv, char *line ) {
     irc_signal( irc );
 
+    IRC_PRINT( line );
+
     return IRC_OK;
 }
 
@@ -67,6 +69,8 @@ static int irc_join_callback( IrcContext *irc, char **argv, char *line ) {
     }
 
     // TODO: make volatile -- unhook this event callback at this point
+
+    IRC_PRINT( line );
 
     return IRC_OK;
 }
@@ -134,16 +138,27 @@ void irc_auth( IrcContext *irc, IrcCallback* ready,
         ready( irc, NULL, NULL );
 
     char *raw;
+
     raw = format_string( strlen( irc->password ) + 9,
                          "PASS %s\r\n",
                          irc->password );
 
     irc_send_raw( irc, raw );
     free_ptr( raw );
-
+    
     raw = format_string( strlen( irc->username ) + 9,
                          "NICK %s\r\n",
                          irc->username );
+    irc_send_raw( irc, raw );
+    free_ptr( raw );
+
+    raw = format_string( strlen( irc->username ) * 3
+                         + strlen(irc->host) + 16,
+                         "USER %s %s %s :%s\r\n",
+                         irc->username,
+                         irc->username,
+                         irc->host,
+                         irc->username);
     irc_send_raw( irc, raw );
     free_ptr( raw );
 
